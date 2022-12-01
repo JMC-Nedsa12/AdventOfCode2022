@@ -13,8 +13,8 @@ public class Day01_2 {
             try{
                 int cal = Integer.parseInt(line);        //sums all calories carried by a specific elf
                 currentSum+=cal;
-            }catch(NumberFormatException e){            //if current line is "" compare sum with current max
-                for (int cals : top3){
+            }catch(NumberFormatException e){            //if current line is "" compare sum with the highest sums in the array
+                for (int cals : top3){                  //and replace the lowest if current is bigger than any of them
                     if(currentSum>cals){
                         top3[0]=currentSum;
                         Arrays.sort(top3);
