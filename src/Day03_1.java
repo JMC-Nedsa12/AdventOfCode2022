@@ -10,7 +10,7 @@ public class Day03_1 {
 
         while(sc.hasNext()){
             char [] line = sc.nextLine().toCharArray();
-            here:
+            here:                               //find a matching element in each of the halves
             for (int i = 0; i<line.length/2;i++){
                 for (int j = line.length/2; j<line.length;j++){
                     if (line[i] == line[j]){
@@ -21,11 +21,11 @@ public class Day03_1 {
                 }
             }
         }
-        for(char c : commons){
+        for(char c : commons){                  //calculate priority value for each element
             if (Character.isLowerCase(c)){
-                sum+=c-96;
+                sum+=c-'a'+1;
             }else{
-                sum+=c-64+26;
+                sum+=c-'A'+27;
             }
         }
         System.out.println(sum);
